@@ -33,7 +33,7 @@ Sintetico, elegante, misterioso. Frasi brevi, niente gergo tecnico, niente super
 - `logo-completo-beige.png` / `logo-completo-marrone.png`: logo con scritta, sfondo trasparente
 - `simbolo-beige.png` / `simbolo-marrone.png`: solo il simbolo (per header e caricamento)
 - `simbolo.svg`: simbolo vettoriale, da usare per l'animazione del caricamento
-- `logo-completo.svg`: logo vettoriale. ATTENZIONE: ha un rettangolo di sfondo beige e la scritta "SELVATICA" è testo vivo in Bostaire (non convertito in tracciati): così com'è non si può usare sul sito. Fino alla nuova esportazione si usano i PNG.
+- `logo-completo.svg`: logo vettoriale in versione marrone (testo in tracciati, senza sfondo). Per lo sfondo scuro del sito serve una variante beige, derivata scambiando i colori.
 - `favicon.ico`, `favicon-32.png`, `favicon-512.png`, `apple-touch-icon.png`
 - `foto-greta-1.png`, `foto-greta-2.png`: mie foto al lavoro, per la sezione "Chi sono". Vanno convertite in WebP e ridimensionate.
 
@@ -77,5 +77,4 @@ Versione Selvatica: una **discesa nella terra selvaggia**. Pareti di roccia scur
 
 ## Da fare / in sospeso
 - P.IVA e testo della privacy policy
-- `logo-completo.svg` da riesportare: testo convertito in tracciati, senza sfondo
 - Video Higgsfield della discesa

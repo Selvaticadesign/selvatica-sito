@@ -1,0 +1,366 @@
+/* ==========================================================================
+   Componenti: pulsanti, schede, passaggi, modulo, animazioni di entrata
+   ========================================================================== */
+
+/* ---------- Pulsanti ---------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.6rem;
+  border: 1px solid var(--brace);
+  border-radius: 0;
+  background: var(--brace);
+  color: var(--terra);
+  font: 500 0.8rem / 1 var(--font-text);
+  font-stretch: 115%;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.35s var(--ease-out), color 0.35s, border-color 0.35s;
+}
+
+.button:hover {
+  background: var(--cotone);
+  border-color: var(--cotone);
+}
+
+.button--small {
+  padding: 0.8rem 1.4rem;
+  background: transparent;
+  color: var(--cotone);
+  border-color: rgba(232, 116, 59, 0.6);
+}
+
+.button--small:hover {
+  background: var(--brace);
+  border-color: var(--brace);
+  color: var(--terra);
+}
+
+/* ---------- Invito a scorrere ---------- */
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  color: var(--cotone-soft);
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.scroll-cue__line {
+  position: relative;
+  width: 1px;
+  height: 3.5rem;
+  overflow: hidden;
+  background: var(--cotone-faint);
+}
+
+.scroll-cue__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, var(--brace));
+  animation: drip 2.4s var(--ease-out) infinite;
+}
+
+@keyframes drip {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* ---------- Cosa faccio ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--terra-line);
+  transition: border-color 0.5s;
+}
+
+.card:hover {
+  border-color: var(--brace);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.2em;
+}
+
+.card p {
+  color: var(--cotone-soft);
+  max-width: 28ch;
+}
+
+@media (max-width: 820px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Per chi ---------- */
+
+.audience {
+  display: grid;
+}
+
+.audience__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1rem 3rem;
+  align-items: baseline;
+  padding-block: 2.25rem;
+  border-bottom: 1px solid var(--cotone-faint);
+}
+
+.audience__item:first-child {
+  border-top: 1px solid var(--cotone-faint);
+}
+
+.audience__lead {
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 0.95rem + 1.1vw, 1.75rem);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.audience__item p:not(.audience__lead) {
+  color: var(--cotone-soft);
+}
+
+@media (max-width: 720px) {
+  .audience__item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Metodo ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem clamp(1.5rem, 3vw, 3rem);
+}
+
+.step {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+}
+
+.step__num {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  color: var(--brace);
+}
+
+/* filetto che collega i passaggi */
+.step__num::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cotone-faint);
+}
+
+.step h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.2em;
+}
+
+.step p {
+  color: var(--cotone-soft);
+}
+
+@media (max-width: 960px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Modulo contatti ---------- */
+
+.form {
+  display: grid;
+  gap: 2rem;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 560px) {
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.field label {
+  color: var(--cotone-soft);
+  font-size: 0.72rem;
+  font-stretch: 115%;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.field__optional {
+  text-transform: none;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.6rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--terra-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cotone);
+  font: inherit;
+  transition: border-color 0.3s;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--brace);
+}
+
+.field--check {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.9rem;
+}
+
+.field--check input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.2rem 0 0;
+  border: 1px solid var(--cotone-soft);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.field--check input::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--terra);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0, 43% 62%);
+  transform: scale(0);
+  transition: transform 0.2s var(--ease-out);
+}
+
+.field--check input:checked {
+  border-color: var(--brace);
+  background: var(--brace);
+}
+
+.field--check input:checked::after {
+  transform: scale(1);
+}
+
+.field--check label {
+  font-size: 0.85rem;
+  font-stretch: 100%;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.form .button {
+  justify-self: start;
+}
+
+.form__status {
+  min-height: 1.5em;
+  color: var(--cotone-soft);
+  font-size: 0.9rem;
+}
+
+.form__status.is-error {
+  color: var(--brace);
+}
+
+/* ---------- Etichette in maiuscolo spaziato ---------- */
+
+.site-nav a,
+.scroll-cue span:first-child {
+  font-size: 0.72rem;
+  font-weight: 400;
+  font-stretch: 115%;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+}
+
+/* ---------- Entrate animate ----------
+   Solo se JavaScript è attivo: senza JS i testi restano visibili. */
+
+.js .reveal {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(18px);
+  transition:
+    opacity 1.2s var(--ease-out),
+    filter 1.2s var(--ease-out),
+    transform 1.2s var(--ease-out);
+  transition-delay: var(--delay, 0s);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}

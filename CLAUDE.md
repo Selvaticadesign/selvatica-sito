@@ -66,6 +66,9 @@ Versione Selvatica: una **discesa nella terra selvaggia**. Pareti di roccia scur
 - Una modifica per volta. Dopo ogni passaggio che funziona: commit con un messaggio chiaro in italiano.
 - Prima di modifiche grandi, spiegami il piano e aspetta la mia conferma.
 
+## Anteprima locale
+`python tools/serve.py` dalla cartella del progetto, poi http://localhost:5500 (si ricarica da sola a ogni salvataggio; Ctrl+C per fermarla). Non serve Node.
+
 ## Decisioni prese
 - 2026-10-08 — Cartella di lavoro: `Sito Web/selvatica-sito/`. Fuori da questa cartella restano solo la guida dei prompt e lo zip originale.
 - 2026-10-08 — GitHub: account gratuito, repository pubblico (GitHub Pages gratis richiede repository pubblico).
@@ -73,6 +76,8 @@ Versione Selvatica: una **discesa nella terra selvaggia**. Pareti di roccia scur
 - 2026-10-08 — Modulo contatti: **Web3Forms**, chiave di accesso `11baadcd-31ba-42bc-b127-c455aa1a8645` (chiave pubblica, è normale che stia nell'HTML).
 - 2026-10-08 — File sorgente (es. `source/logo-completo.ai`) in `source/`, esclusi da git: non vanno pubblicati.
 - 2026-10-09 — Accento: brace `#E8743B`, scelto da Claude su richiesta di Greta ("qualcosa che spicca di contrasto").
+- 2026-10-09 — Logo e simbolo sul sito in SVG beige (`logo-completo-beige.svg`, `simbolo-beige.svg`), ricavati dagli SVG marroni scambiando i colori.
+- 2026-10-09 — Struttura base: index.html, css/ (base, layout, components), js/ (main, reveal). Discesa segnaposto: sfondo sfumato + "seme" in CSS.
 - 2026-10-08 — Foto di "Chi sono": si possono ritoccare (viraggio caldo, verdi smorzati) per renderle coerenti con la palette.
 
 ## Da fare / in sospeso

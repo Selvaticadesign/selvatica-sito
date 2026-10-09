@@ -1,0 +1,19 @@
+# File sorgente: vettoriali, video Higgsfield, lavorazioni (pesanti e privati)
+source/
+
+# File di sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Strumenti da riga di comando
+node_modules/
+*.log
+
+# Segreti e impostazioni locali
+.env
+.claude/settings.local.json
